@@ -1,0 +1,14 @@
+
+- name: verify git is installed
+  sudo: yes
+  apt: pkg=git state=present
+
+- name: checkout devstack from github
+  git: repo={{devstack_repo}} dest=/vagrant/devstack version={{devstack_branch}} accept_hostkey=yes
+
+- name: copy local.conf
+  template: src=local.conf dest=/vagrant/devstack/local.conf
+
+- name: create logs folder
+  sudo: yes
+  file: path=/opt/stack/logs state=directory recurse=yes owner=vagrant group=vagrant

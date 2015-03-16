@@ -1,0 +1,8 @@
+# define cluster. currently only controller nodes are supported
+cluster:
+  controller_nodes:
+    - hostname: controller1.openstack.dev
+      ip: 10.16.0.20
+      cpu: 4
+      memory: 8192
+  compute_nodes:

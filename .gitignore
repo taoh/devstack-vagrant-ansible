@@ -1,0 +1,9 @@
+.vagrant
+local_config.rb
+config.yaml
+.#*
+#*
+*.box
+# openstack created folders
+devstack
+openstack
